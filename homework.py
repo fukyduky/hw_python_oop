@@ -1,4 +1,4 @@
-from typing import Set, Sequence, Union
+from typing import Sequence, Union
 
 
 class InfoMessage:
@@ -118,8 +118,8 @@ class Swimming(Training):
 def read_package(workout_type: str,
                  data: Sequence[Union[int, float]]) -> Training:
     """Прочитать данные полученные от датчиков."""
-    packages: dict = {'SWM': Swimming, 
-                      'RUN': Running, 
+    packages: dict = {'SWM': Swimming,
+                      'RUN': Running,
                       'WLK': SportsWalking}
     return packages[workout_type](*data)
 
