@@ -118,10 +118,10 @@ class Swimming(Training):
 def read_package(workout_type: str,
                  data: Sequence[Union[int, float]]) -> Training:
     """Прочитать данные полученные от датчиков."""
-    packages: dict = {'SWM': Swimming,
-                      'RUN': Running,
-                      'WLK': SportsWalking}
-    return packages[workout_type](*data)
+    training_types: dict = {'SWM': Swimming,
+                            'RUN': Running,
+                            'WLK': SportsWalking}
+    return training_types[workout_type](*data)
 
 
 def main(training: Training) -> None:
