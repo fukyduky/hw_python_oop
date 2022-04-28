@@ -1,4 +1,4 @@
-from typing import Type, Dict
+from typing import Type, Dict, List
 from dataclasses import dataclass
 
 
@@ -45,7 +45,7 @@ class Training:
     def get_spent_calories(self) -> float:
         """Получить количество затраченных калорий."""
         raise NotImplementedError(
-            'Определите get_spent_calories в %s.' % (self.__class__.__name__))
+            f'Определите get_spent_calories в {type(self).__name__}')
 
     def show_training_info(self) -> InfoMessage:
         """Вернуть информационное сообщение о выполненной тренировке."""
@@ -111,7 +111,7 @@ class Swimming(Training):
 
 
 def read_package(workout_type: str,
-                 data: list) -> Training:
+                 data: List[int]) -> Training:
     """Прочитать данные полученные от датчиков."""
     training_types: Dict[str, Type[Training]] = {
         'SWM': Swimming,
