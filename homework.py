@@ -78,7 +78,7 @@ class SportsWalking(Training):
         super().__init__(action, duration, weight)
         self.height = height
 
-    def get_spent_calories(self):
+    def get_spent_calories(self) -> float:
         return ((self.COEFF_WALKING_ADD * self.weight + (
                 self.get_mean_speed() ** 2 // self.height)
             * self.COEFF_WALKING_MULT * self.weight)
@@ -87,8 +87,8 @@ class SportsWalking(Training):
 
 class Swimming(Training):
     """Тренировка: плавание."""
-    COEFF_SWIMMING_ADD = 1.1
-    COEFF_SWIMMING_MULT = 2
+    COEFF_SWIMMING_ADD: float = 1.1
+    COEFF_SWIMMING_MULT: float = 2
     LEN_STEP = 1.38
 
     def __init__(self,
