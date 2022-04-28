@@ -56,7 +56,7 @@ class Training:
 
 class Running(Training):
     """Тренировка: бег."""
-    COEFF_RUNNING_MULT: float = 18 #не очень понимаю, как их
+    COEFF_RUNNING_MULT: float = 18
     COEFF_RUNNING_SUBTR: float = 20
 
     def get_spent_calories(self) -> float:
